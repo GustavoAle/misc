@@ -1,0 +1,19 @@
+set():width=676 
+set():height=342
+set():fontcolor=192.192.192
+set():backcolor=000.000.000
+set():fontname=The One True Font (System 8x12)
+clearall
+xcom=t
+AddFontResource("8x12.tff")
+cmd_say("Microsoft Windows [Version 6.1.7601]")
+cmd_say("Copyright (c) 2009 Microsoft Corporation.  All rights reserved.)")
+_definemainmenu('main')
+_definemenupopup('File','file')
+_definemenuitem('Open',{||exec_cmd("file-edit:"+getfile())},'open')
+_definemenuitem('Save',{||memowrit(putfile(),getproperty('main','cmd','value'))},'save')
+_defineseparator()
+_definemenuitem('Exit',{||domethod("main","release")},'exit')
+_endmenupopup()
+_endmenu()
+xcom=f

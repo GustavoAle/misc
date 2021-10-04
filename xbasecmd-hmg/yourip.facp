@@ -1,0 +1,9 @@
+xcom=t
+var('oHttp')
+var('x')
+oHttp:=TipClientHttp():New("http://www.ip-adress.com/")
+oHttp:Open()
+x:=oHttp:ReadAll()
+x:=substr(x,at("Your IP address is: ",x)+20)
+x:=substr(x,0,at("<",x)-1)
+msgbox(x)

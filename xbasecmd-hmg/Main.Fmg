@@ -1,0 +1,121 @@
+* HMG-UNICODE IDE Form Designer Generated Code
+* (c) Roberto Lopez - http://sites.google.com/site/hmgweb
+
+DEFINE WINDOW TEMPLATE AT 174 , 329 WIDTH 482 HEIGHT 371 VIRTUAL WIDTH Nil VIRTUAL HEIGHT Nil TITLE "Free Access to Command Prompt [ Quick Insertion ]" ICON "win" MAIN NOCAPTION CURSOR NIL ON INIT load_fromfile(cDragndropfile) ON RELEASE Nil ON INTERACTIVECLOSE Nil ON MOUSECLICK PostMessage( MAin.HANDLE, 161, 2 , 0) ON MOUSEDRAG nil ON MOUSEMOVE Nil ON SIZE size_cmd() ON MAXIMIZE size_cmd() ON MINIMIZE Nil ON PAINT SetTheme() BACKCOLOR {0,0,0} NOTIFYICON NIL NOTIFYTOOLTIP NIL ON NOTIFYCLICK Nil ON GOTFOCUS Nil ON LOSTFOCUS Nil ON SCROLLUP Nil ON SCROLLDOWN Nil ON SCROLLLEFT Nil ON SCROLLRIGHT Nil ON HSCROLLBOX Nil ON VSCROLLBOX Nil
+
+    DEFINE EDITBOX cmd
+        ROW    35
+        COL    0
+        WIDTH  420
+        HEIGHT 260
+        VALUE ""
+        FONTNAME "Segoe UI"
+        FONTSIZE 12
+        TOOLTIP ""
+        ONCHANGE Nil
+        ONGOTFOCUS Nil
+        ONLOSTFOCUS Nil
+        FONTBOLD .F.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        TABSTOP .T.
+        VISIBLE .T.
+        READONLY .F.
+        HSCROLLBAR .F.
+        VSCROLLBAR .T.
+        DISABLEDBACKCOLOR Nil
+        DISABLEDFONTCOLOR Nil
+        BACKCOLOR {30,30,30}
+        FONTCOLOR {10,155,145}
+    END EDITBOX
+
+    DEFINE IMAGE _mem
+        ROW    280
+        COL    10
+        WIDTH  160
+        HEIGHT 35
+        PICTURE "_mem"
+        HELPID Nil
+        VISIBLE .T.
+        STRETCH .F.
+        ACTION Nil
+    END IMAGE
+
+    DEFINE TIMER Timer_1 INTERVAL 700 ACTION  update_mem()
+
+    DEFINE IMAGE _1st
+        ROW    280
+        COL    180
+        WIDTH  20
+        HEIGHT 35
+        PICTURE "_0"
+        HELPID Nil
+        VISIBLE .T.
+        STRETCH .F.
+        ACTION nil
+    END IMAGE
+
+    DEFINE IMAGE _2nd
+        ROW    280
+        COL    200
+        WIDTH  20
+        HEIGHT 35
+        PICTURE "_0"
+        HELPID Nil
+        VISIBLE .T.
+        STRETCH .F.
+        ACTION nil
+    END IMAGE
+
+    DEFINE IMAGE _perc
+        ROW    280
+        COL    220
+        WIDTH  27
+        HEIGHT 35
+        PICTURE "_per"
+        HELPID Nil
+        VISIBLE .T.
+        STRETCH .F.
+        ACTION nil
+    END IMAGE
+
+    DEFINE IMAGE _title
+        ROW    0
+        COL    10
+        WIDTH  365
+        HEIGHT 35
+        PICTURE "_title"
+        HELPID Nil
+        VISIBLE .T.
+        STRETCH .F.
+        ACTION PostMessage( MAin.HANDLE, 161, 2 , 0)
+    END IMAGE
+
+    DEFINE IMAGE _exit
+        ROW    0
+        COL    432
+        WIDTH  32
+        HEIGHT 32
+        PICTURE "exit_"
+        HELPID Nil
+        VISIBLE .T.
+        STRETCH .F.
+        ACTION request_exit()
+    END IMAGE
+
+    DEFINE IMAGE _about
+        ROW    0
+        COL    400
+        WIDTH  32
+        HEIGHT 32
+        PICTURE "_about"
+        HELPID Nil
+        VISIBLE .T.
+        STRETCH .F.
+        ACTION MsgInfo("xBase Command Interpreter"+CRLF+"Opensource"+CRLF+"Harbour MiniGui 3.2"+CRLF+CRLF+"Gustavo Ale"+CRLF+CRLF+"Special Thanks To:"+CRLF+"Dr. Claudio Soto (DwmExtendFrameIntoClientArea)","xBase Command Interpreter")
+    END IMAGE
+
+END WINDOW
+

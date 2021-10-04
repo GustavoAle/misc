@@ -1,0 +1,3 @@
+echo('Turns Google Chrome or Opera into half transparent')
+var('hWndChr',findwindow('Chrome_WidgetWin_1',nil))
+SetWindowTransparent (hWndChr, 128)
